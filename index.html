@@ -4,107 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bajty.pl | Czyste integracje w Spring Boot</title>
-    <!-- Ładujemy minimalnego Tailwinda prosto z sieci -->
+    <!-- Ładujemy Tailwinda oraz własne style -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        pre {
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            padding: 1.25rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            color: #38bdf8;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.875rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-slate-900 text-slate-300 font-sans antialiased leading-relaxed">
 
 <div class="max-w-3xl mx-auto px-6 py-16">
 
     <!-- Nagłówek -->
-    <header class="mb-14 border-b border-slate-800 pb-8">
-        <h1 class="text-4xl font-extrabold text-white tracking-tight mb-2">bajty<span class="text-blue-500">.pl</span>
-        </h1>
-        <p class="text-xl text-slate-400">Gotowe komponenty integracyjne dla ekosystemu Java/Spring.</p>
+    <header class="mb-14 border-b border-slate-800 pb-8 flex flex-col md:flex-row md:items-end md:justify-between">
+        <div>
+            <h1 class="text-4xl font-extrabold text-white tracking-tight mb-2">
+                bajty<span class="text-blue-500">.pl</span>
+            </h1>
+            <p class="text-xl text-slate-400">Gotowe komponenty integracyjne dla ekosystemu Java/Spring.</p>
+        </div>
     </header>
 
-    <!-- Sekcja: O mnie i motywacja -->
-    <section class="mb-14">
-        <h2 class="text-2xl font-bold text-white mb-4">Dlaczego to robię?</h2>
-        <div class="space-y-4 text-slate-300">
-            <p>
-                Cześć, nazywam się <strong>Mateusz Polak</strong> i od dekady jestem programistą. W swojej karierze
-                pracowałem przy projektach rządowych związanych z bezpieczeństwem, tworzyłem rozwiązania dla branży
-                medycznej oraz systemy dla spółdzielni banków skandynawskich.
-            </p>
-            <p>
-                W wielu z tych miejsc zderzałem się z tymi samymi problemami – uciążliwymi integracjami z publicznymi i
-                przestarzałymi usługami, które skutecznie uprzykrzały życie całemu zespołowi. Zamiast pisać po raz
-                kolejny ten sam kod, postanowiłem wykorzystać swoje doświadczenie i przygotować gotowe, przetestowane
-                komponenty integracyjne, z których każdy może skorzystać.
-            </p>
-        </div>
-    </section>
-
-    <!-- Sekcja: Model i Wizja -->
-    <section class="mb-14">
-        <h2 class="text-2xl font-bold text-white mb-4">Model działania i wizja na przyszłość</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-5">
-                <h3 class="text-white font-bold mb-2 flex items-center">
-                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> Open Source
-                </h3>
-                <p class="text-sm text-slate-400">
-                    Najbardziej podstawowe komponenty udostępniam całkowicie za darmo w ramach wspierania innych twórców
-                    i firm. Kod jest otwarty, a Ty możesz go użyć od zaraz. Komponenty te udostępniam na podstawie
-                    licencji MIT.</p>
-            </div>
-            <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-5">
-                <h3 class="text-white font-bold mb-2 flex items-center">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span> Wersje Premium
-                </h3>
-                <p class="text-sm text-slate-400">
-                    Bardziej ambitne moduły mam zamiar udostępniać odpłatnie, co pozwoliłoby mi finansować czas
-                    poświęcony na rozwój projektów.
+    <main>
+        <!-- Sekcja: O mnie i motywacja -->
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold text-white mb-4">Dlaczego to robię?</h2>
+            <div class="space-y-4 text-slate-300">
+                <p>
+                    Cześć, nazywam się <strong>Mateusz Polak</strong> i od dekady jestem programistą. W swojej karierze
+                    pracowałem przy projektach rządowych związanych z bezpieczeństwem, tworzyłem rozwiązania dla branży
+                    medycznej oraz systemy dla spółdzielni banków skandynawskich.
+                </p>
+                <p>
+                    W wielu z tych miejsc zderzałem się z tymi samymi problemami – uciążliwymi integracjami z
+                    publicznymi i przestarzałymi usługami, które skutecznie uprzykrzały życie całemu zespołowi. Zamiast
+                    pisać po raz kolejny ten sam kod, postanowiłem wykorzystać swoje doświadczenie i przygotować gotowe,
+                    przetestowane komponenty integracyjne, z których każdy może skorzystać.
                 </p>
             </div>
-        </div>
-        <p class="text-slate-300">
-            Obecnie rozwijam ten projekt samodzielnie pod szyldem <strong>bajty.pl</strong>, nie prowadząc jeszcze
-            oficjalnej działalności gospodarczej. Jeśli jednak projekt przyjmie się na rynku, planuję formalnie
-            zarejestrować markę, zrzeszyć wokół niej ambitne osoby i przekształcić bajty.pl w startup realnie
-            wspierający polskie IT.
-        </p>
-    </section>
+        </section>
 
-    <!-- Sekcja: Społeczność -->
-    <section class="mb-14">
-        <h2 class="text-2xl font-bold text-white mb-4">Społeczność i rozwój</h2>
-        <p class="mb-4">
-            Nie chcę tworzyć kodu do szuflady. Jestem otwarty na Wasze sugestie, Pull Requesty i pomysły na nowe
-            funkcjonalności. Zależy mi na tym, aby biblioteki były regularnie aktualizowane, a społeczność miała realny
-            wpływ na to, w jakim kierunku ewoluują.
-        </p>
-        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 mt-6">
-            <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-bold text-white">Pierwszy projekt: TERYT Starter</h3>
-                <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-0.5 rounded uppercase tracking-wider">W przygotowaniu</span>
+        <!-- Sekcja: Model i Wizja -->
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold text-white mb-4">Model działania i wizja na przyszłość</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-5">
+                    <h3 class="text-white font-bold mb-2 flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> Open Source
+                    </h3>
+                    <p class="text-sm text-slate-400">
+                        Najbardziej podstawowe komponenty udostępniam całkowicie za darmo – w ramach wsparcia dla innych
+                        twórców i firm. Ich kod jest otwarty (licencja MIT), dzięki czemu możesz z niego korzystać od
+                        zaraz.
+                    </p>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-5">
+                    <h3 class="text-white font-bold mb-2 flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span> Wersje Premium
+                    </h3>
+                    <p class="text-sm text-slate-400">
+                        Bardziej ambitne moduły mam zamiar udostępniać odpłatnie, co pozwoliłoby mi finansować czas
+                        poświęcony na rozwój projektów. O ich zakresie i przyszłości będę informował na bieżąco za
+                        pomocą aktualizacji na stronie oraz GitHub.
+                    </p>
+                </div>
             </div>
-            <p class="text-slate-300 mb-6 italic text-sm">
-                Starter Spring Boot mapujący API SOAP (TerytWs1 Service) na czyste obiekty oparte o Java Records i
-                enumy, z prostą konfiguracją i gotowymi interfejsami do pobierania danych.
+            <div class="space-y-4 text-slate-300">
+                <p>
+                    Obecnie rozwijam ten projekt samodzielnie pod szyldem <strong>bajty.pl</strong>, nie prowadząc
+                    jeszcze oficjalnej działalności gospodarczej. Jeśli jednak projekt przyjmie się na rynku, planuję
+                    formalnie zarejestrować markę, zrzeszyć wokół niej ambitne osoby i przekształcić bajty.pl w startup
+                    realnie wspierający polskie IT.
+                </p>
+                <p>
+                    Jeśli moje rozwiązania zaoszczędziły Ci trochę czasu lub nerwów, a Twoja sytuacja finansowa na
+                    to pozwala, będę ogromnie wdzięczny za wsparcie poprzez GitHub Sponsors. Jednocześnie daję
+                    słowo: projekty na licencji MIT nigdy nie staną się płatne. Moim głównym celem jest po prostu
+                    ułatwianie Ci pracy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sekcja: Społeczność -->
+        <section class="mb-14">
+            <h2 class="text-2xl font-bold text-white mb-4">Społeczność i rozwój</h2>
+            <p class="mb-4">
+                Nie chcę tworzyć kodu do szuflady. Jestem otwarty na Wasze sugestie, Pull Requesty i pomysły na nowe
+                funkcjonalności. Zależy mi na tym, aby biblioteki były regularnie aktualizowane, a społeczność miała
+                realny wpływ na to, w jakim kierunku ewoluują.
             </p>
-            <div>
-                <p class="text-sm font-semibold text-slate-400 mb-2">Śledź postępy na GitHubie:</p>
-                <a href="https://github.com/bajty-pl"
-                   class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center transition-colors">
-                    github.com/bajty-pl &rarr;
-                </a>
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 mt-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                    <h3 class="text-xl font-bold text-white">Pierwszy projekt: TERYT Starter</h3>
+                    <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-0.5 rounded uppercase tracking-wider w-fit">W przygotowaniu</span>
+                </div>
+                <p class="text-slate-300 mb-6 italic text-sm">
+                    Starter Spring Boot mapujący API SOAP (TerytWs1 Service) na czyste obiekty oparte o Java Records i
+                    enumy, z prostą konfiguracją i gotowymi interfejsami do pobierania danych.
+                </p>
+                <div>
+                    <p class="text-sm font-semibold text-slate-400 mb-2">Śledź postępy na GitHubie:</p>
+                    <a href="https://github.com/bajty-pl"
+                       class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center transition-colors">
+                        github.com/bajty-pl &rarr;
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <!-- Footer / Kontakt -->
     <footer class="border-t border-slate-800 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
